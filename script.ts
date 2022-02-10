@@ -3,7 +3,7 @@
 
 //create class
 class Person {
-    constructor(public name:string, public age:number, public jobTitle:string, public arr?:Array<Person> ){
+    constructor(public name:string, protected age:number, public jobTitle:string, public arr?:Array<Person> ){
         if (typeof arr !== 'undefined') {arr.push(this) };
     }
     greetings() {
@@ -21,7 +21,7 @@ arrPersons.forEach(element => {
 //-------------------------------------------------------------------------------------
 //Exercise 2:
 class Person_BIG extends Person {
-    constructor( name:string,  age:number,  jobTitle:string, public salery:number, public jobLocation:string, public arr?:Array<Person> ) {
+    constructor( name:string,  age:number,  jobTitle:string, private salery:number, public jobLocation:string, public arr?:Array<Person> ) {
         super(name, age, jobTitle, arr);
     }
     greetings() {
